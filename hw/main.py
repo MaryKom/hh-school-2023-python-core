@@ -18,6 +18,7 @@ wines = [
     Wine("Sovinion", datetime.strptime('2023-12-15', '%Y-%m-%d')),
     Wine("Izabel", datetime.strptime('2020-05-06', '%Y-%m-%d')),
     Wine("Merlot", datetime.strptime('2015-01-26', '%Y-%m-%d')),
+    Wine("Merlot2", None),
 ]
 beers = [
     Beer("Ochakovo", datetime.strptime('2023-05-05', '%Y-%m-%d')),

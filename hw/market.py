@@ -36,10 +36,10 @@ class Market:
         if from_date is None and to_date is None:
             return None
         elif from_date is None:
-            filter_drinks = [drink for drink in drinks if drink.production_date <= to_date]
+            filter_drinks = [drink for drink in drinks if drink.production_date is not None if drink.production_date <= to_date]
         elif to_date is None:
-            filter_drinks = [drink for drink in drinks if from_date <= drink.production_date]
+            filter_drinks = [drink for drink in drinks if drink.production_date is not None if from_date <= drink.production_date]
         else:
-            filter_drinks = [drink for drink in drinks if from_date <= drink.production_date <= to_date]
+            filter_drinks = [drink for drink in drinks if drink.production_date is not None if from_date <= drink.production_date <= to_date]
         sorted_drinks = sorted(filter_drinks, key=lambda drink: drink.production_date)
         return sorted_drinks
