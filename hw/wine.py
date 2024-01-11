@@ -5,4 +5,5 @@ class Wine:
 
     def __str__(self):
         production_date = "None" if self.production_date is None else self.production_date.strftime("%Y-%m-%d")
-        return "(title=" + self.title + ", production_date=" + production_date + ")"
+        title = "None" if self.title is None else self.title
+        return "(title=" + title + ", production_date=" + production_date + ")"

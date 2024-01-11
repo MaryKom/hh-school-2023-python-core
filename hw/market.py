@@ -22,7 +22,7 @@ class Market:
         :return: list
         """
         drinks = list(self.wines.values()) + list(self.beers.values())
-        sorted_drinks = sorted(drinks, key=lambda drink: drink.title)
+        sorted_drinks = sorted(drinks, key=lambda drink: (drink.title is None, drink.title))
         return sorted_drinks
 
     @timer

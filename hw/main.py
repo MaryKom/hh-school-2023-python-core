@@ -19,6 +19,7 @@ wines = [
     Wine("Izabel", datetime.strptime('2020-05-06', '%Y-%m-%d')),
     Wine("Merlot", datetime.strptime('2015-01-26', '%Y-%m-%d')),
     Wine("Merlot2", None),
+    Wine(None, None),
 ]
 beers = [
     Beer("Ochakovo", datetime.strptime('2023-05-05', '%Y-%m-%d')),
@@ -46,5 +47,11 @@ print("             Drinks sorted by production_date:")
 from_date = datetime.strptime('2022-01-01', '%Y-%m-%d')
 to_date = datetime.strptime('2023-12-31', '%Y-%m-%d')
 drinks_by_production_date = market.get_drinks_by_production_date(from_date, to_date)
-for drink in drinks_by_production_date:
-    print(drink)
+if drinks_by_production_date is not None:
+    for drink in drinks_by_production_date:
+        print(drink)
+
+drinks_by_production_date_none = market.get_drinks_by_production_date(None, None)
+if drinks_by_production_date_none is not None:
+    for drink in drinks_by_production_date_none:
+        print(drink)
